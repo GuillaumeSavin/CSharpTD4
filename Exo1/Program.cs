@@ -29,14 +29,10 @@ namespace Exo1
             Console.WriteLine(tab.PlusHautSal("Manager"));
             Console.WriteLine("COMMERCIAL AYANT PLUS HAUT SALAIRE");
             Console.WriteLine(tab.PlusHautSal("Commercial"));
-            /*
-            
+
             Console.WriteLine("TRI SUR AGE ");
             tab.Sort();
-            foreach (Collaborateur c in tab)
-            {
-                Console.WriteLine(c);
-            }
+            Console.WriteLine(tab.ToString());/*
             Console.WriteLine("TRI SUR SALAIRE ");
             tab.Sort(new TriSalaire());
             foreach (Collaborateur c in tab)

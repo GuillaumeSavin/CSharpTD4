@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 
@@ -77,15 +78,47 @@ namespace Exo1
             
             return max;
         }
+        
+        public void Sort()
+        {
+            for (int i = 0; i < tab.Count; i++)
+            {
+                int min = tab[i].CalculAge();;
+                int indice = -1;
+                bool trouve = false;
+                
+                for (int j = i + 1; j < tab.Count; j++)
+                {
+                    int ageJ = tab[j].CalculAge();
+                    
+                    if (min > ageJ)
+                    {
+                        trouve = true;
+                        min = ageJ;
+                        indice = j;
+                    }
+                }
+
+                if (trouve)
+                {
+                    Collaborateur tmp = tab[indice];
+                    tab[indice] = tab[i];
+                    tab[i] = tmp;
+                }
+            }
+        }
+
+        public List<Collaborateur> Tab => tab;
+
         public override string ToString()
         {
             String str = "";
 
-            str += "Liste des Collaborateurs :\n\n";
+            str += "Liste des Collaborateurs :\n\n\t";
 
             foreach (var collaborateur in tab)
             {
-                str += collaborateur.ToString() + "\n";
+                str += collaborateur.ToString() + "\n\n\t";
             }
             
             return str;

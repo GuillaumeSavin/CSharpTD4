@@ -19,6 +19,13 @@ namespace Exo1
 
         public abstract Double CalculSalaire();
 
+        public int CalculAge()
+        {
+            DateTime mAujourdhui = DateTime.Today;
+            int Age = new DateTime(mAujourdhui.Subtract(this.dateDeNaissance).Ticks).Year - 1;
+            return Age;
+        }
+
         public override string ToString()
         {
             String str = "";
