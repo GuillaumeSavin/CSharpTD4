@@ -32,14 +32,11 @@ namespace Exo1
 
             Console.WriteLine("TRI SUR AGE ");
             tab.Sort();
-            Console.WriteLine(tab.ToString());/*
+            Console.WriteLine(tab.ToString());
             Console.WriteLine("TRI SUR SALAIRE ");
-            tab.Sort(new TriSalaire());
-            foreach (Collaborateur c in tab)
-            {
-                Console.WriteLine(c);
-            }
-            */
+            tab.Sort("TriSalaire");
+            Console.WriteLine(tab.ToString());
+
         }
     }
 }

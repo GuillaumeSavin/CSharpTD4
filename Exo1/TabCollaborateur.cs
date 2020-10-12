@@ -108,6 +108,35 @@ namespace Exo1
             }
         }
 
+        public void Sort(String str)
+        {
+            for (int i = 0; i < tab.Count; i++)
+            {
+                double min = tab[i].CalculSalaire();;
+                int indice = -1;
+                bool trouve = false;
+                
+                for (int j = i + 1; j < tab.Count; j++)
+                {
+                    double salaireJ = tab[j].CalculSalaire();
+                    
+                    if (min > salaireJ)
+                    {
+                        trouve = true;
+                        min = salaireJ;
+                        indice = j;
+                    }
+                }
+
+                if (trouve)
+                {
+                    Collaborateur tmp = tab[indice];
+                    tab[indice] = tab[i];
+                    tab[i] = tmp;
+                }
+            }
+        }
+
         public List<Collaborateur> Tab => tab;
 
         public override string ToString()
